@@ -1,0 +1,329 @@
+/* Variabel warna dan ukuran utama */
+:root {
+  --color-black: #050505;
+  --color-white: #ffffff;
+  --color-navy: #06134f;
+  --color-gray: #d9d9df;
+  --page-width: 1000px;
+}
+
+/* Pengaturan dasar halaman */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 16px;
+}
+
+body {
+  margin: 0;
+  background: var(--color-black);
+  color: var(--color-white);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+/* Header dan tombol navigasi */
+.site-header {
+  width: 100%;
+  background: var(--color-white);
+  padding: 13px 6px 14px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  max-width: var(--page-width);
+  margin: 0 auto;
+}
+
+.navigation a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 6px 10px;
+  border: 1px solid var(--color-black);
+  border-radius: 22px;
+  color: var(--color-black);
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color .2s, color .2s;
+}
+
+.navigation a:hover,
+.navigation a:focus-visible {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+/* Latar bagian gelap dan pembuka */
+.section-dark {
+  background: var(--color-black);
+  border-bottom: 6px solid var(--color-gray);
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 210px;
+  padding: 8px 20px 8px 15px;
+  border-left: 5px solid var(--color-white);
+}
+
+.hero-copy h1 {
+  margin: 0 0 6px;
+  font-size: clamp(42px, 11vw, 54px);
+  line-height: 1.08;
+  letter-spacing: -1.8px;
+  font-weight: 900;
+}
+
+.hero-copy p {
+  margin: 0;
+  font-size: clamp(16px, 4.6vw, 21px);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.profile-photo {
+  flex: 0 0 auto;
+  width: clamp(105px, 32vw, 132px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Tautan portofolio */
+.portfolio-link {
+  min-height: 54px;
+  padding: 8px 6px 10px;
+}
+
+.outline-link,
+.section-label {
+  display: inline-block;
+  border: 1px solid var(--color-white);
+  padding: 5px 6px;
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+/* Tentang diri dan daftar skill */
+.about {
+  padding: 13px 6px 14px;
+}
+
+.section-label {
+  margin: 0 0 9px;
+}
+
+.about-card {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 10px 15px 12px;
+  border: 1px solid var(--color-white);
+  border-radius: 23px;
+  font-size: 15px;
+  line-height: 1.32;
+}
+
+.about-card p {
+  margin: 0;
+}
+
+.about-card .skills {
+  margin-top: 12px;
+}
+
+/* Galeri desain */
+.works {
+  padding: 10px 0 12px;
+}
+
+.works .section-label {
+  margin-left: 6px;
+  margin-bottom: 10px;
+}
+
+.work-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  padding: 18px 20px 20px;
+  background: var(--color-navy);
+}
+
+.work-item {
+  min-width: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.work-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 0.77;
+  object-fit: cover;
+  border: 1px solid var(--color-white);
+  border-radius: 13px;
+}
+
+.work-item figcaption {
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Bagian kontak */
+.contact {
+  display: flex;
+  justify-content: center;
+  padding: 14px 10px;
+  background: var(--color-white);
+}
+
+.email-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 10px;
+  border: 1px solid var(--color-black);
+  color: var(--color-black);
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.email-link span {
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* Penyesuaian tampilan layar yang lebih lebar */
+@media (min-width: 700px) {
+  .site-header {
+    padding: 18px 24px;
+  }
+
+  .navigation {
+    justify-content: flex-start;
+    gap: 14px;
+  }
+
+  .navigation a {
+    padding: 8px 18px;
+    font-size: 15px;
+  }
+
+  .hero {
+    min-height: 360px;
+    padding: 28px max(6vw, 30px);
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(64px, 8vw, 100px);
+  }
+
+  .hero-copy p {
+    font-size: clamp(23px, 2.5vw, 30px);
+  }
+
+  .profile-photo {
+    width: clamp(190px, 28vw, 280px);
+  }
+
+  .portfolio-link,
+  .about,
+  .works {
+    padding-left: max(6vw, 24px);
+    padding-right: max(6vw, 24px);
+  }
+
+  .portfolio-link {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .about {
+    padding-top: 22px;
+    padding-bottom: 24px;
+  }
+
+  .about-card {
+    margin-left: 0;
+    padding: 20px 24px;
+    font-size: 18px;
+  }
+
+  .works .section-label {
+    margin-left: 0;
+  }
+
+  .work-gallery {
+    grid-template-columns: repeat(3, minmax(0, 230px));
+    justify-content: start;
+    gap: 24px;
+    padding: 26px;
+  }
+
+  .work-item figcaption {
+    font-size: 14px;
+  }
+
+  .contact {
+    padding: 20px;
+  }
+
+  .email-link {
+    font-size: 17px;
+  }
+}
+
+/* Pengaturan tambahan untuk HP yang sangat sempit */
+@media (max-width: 350px) {
+  .navigation {
+    gap: 4px;
+  }
+
+  .navigation a {
+    padding: 5px 7px;
+    font-size: 12px;
+  }
+
+  .hero {
+    gap: 8px;
+    padding-right: 10px;
+  }
+
+  .hero-copy h1 {
+    font-size: 39px;
+  }
+
+  .hero-copy p {
+    font-size: 14px;
+  }
+
+  .profile-photo {
+    width: 96px;
+  }
+
+  .work-gallery {
+    gap: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
